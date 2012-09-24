@@ -58,6 +58,18 @@ collectd_python_plugin "redis" do
 end
 ```
 
+Some plugins require you to maintain the Case Sensitivity . This cookbook follows the ruby convention to do this. Note (carbon_writer does not get install, it's just an example)
+
+```ruby
+collectd_python_plugin "carbon_writer" do
+  options  :line_receiver_host      => "127.0.0.1",
+  :line_receiver_port               => 2003,
+  :differentiate_counters_over_time => true,
+  :lowercase_metric_names           => true,
+  :types_db                         => "/usr/share/collectd/types.db"
+end
+```
+
 Options are interpreted in the same way as with `collectd_plugin`. This define will not deploy the plugin script as well, so be sure to setup a cookbook_file resource
 or other mechanism to handle distribution. Example:
 
@@ -71,7 +83,7 @@ end
 
 ## Web frontend ##
 
-The `collectd::collectd_web` recipe will automatically deploy the [collectd_web](https://github.com/httpdss/collectd-web) frontend using Apache. The 
+The `collectd::collectd_web` recipe will automatically deploy the [collectd_web](https://github.com/httpdss/collectd-web) frontend using Apache. The
 [apache2](https://github.com/opscode/cookbooks/tree/master/apache2) cookbook is required for this and is *not* included automatically as this is an optional
 component, so be sure to configure the node with the correct recipes.
 
