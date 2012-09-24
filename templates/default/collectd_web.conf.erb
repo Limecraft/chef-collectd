@@ -1,4 +1,4 @@
-<VirtualHost *:80>
+<VirtualHost *:<%= @node[:collectd][:collectd_web][:http_port] %>>
     ServerName <%= @node[:collectd][:collectd_web][:hostname] %>
 
     DocumentRoot <%= @node[:collectd][:collectd_web][:path] %>
