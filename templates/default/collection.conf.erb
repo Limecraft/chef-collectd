@@ -1,2 +1,2 @@
-datadir: "/var/lib/collectd/rrd/"
-libdir: "/usr/lib/collectd/"
+datadir: "<%= node[:collectd][:base_dir] %>"
+libdir: "<%= node[:collectd][:plugin_dir] %>"
