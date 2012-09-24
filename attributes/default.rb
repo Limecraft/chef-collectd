@@ -22,6 +22,8 @@ default[:collectd][:plugin_dir] = "/usr/lib/collectd"
 default[:collectd][:types_db] = ["/usr/share/collectd/types.db"]
 default[:collectd][:interval] = 10
 default[:collectd][:read_threads] = 5
+default[:collectd][:server_role] = "collectd_server"
+default[:collectd][:server_ip] = "127.0.0.1"
 
 # To make the collectd web out of the box we need to 
 # activate the rrdtool plugin on the server

@@ -16,6 +16,8 @@ The [collectd_plugins](#) cookbook is not required, but provides many common plu
 * collectd.plugin_dir - Base folder to find plugins.
 * collectd.types_db - Array of files to read graph type information from.
 * collectd.interval - Time period in seconds to wait between data reads.
+* collectd.server_role - Name of the Chef Role to look for to identity a server. Defaults to collectd_server
+* collectd.server_ip - IP address of collectd server to use
 
 * collectd.collectd_web.path - Location to install collectd_web to. Defaults to /srv/collectd_web.
 * collectd.collectd_web.hostname - Server name to use for collectd_web Apache site.

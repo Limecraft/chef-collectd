@@ -20,8 +20,21 @@
 include_recipe "collectd"
 
 servers = []
-search(:node, 'recipes:"collectd::server"') do |n|
-  servers << n['fqdn']
+
+# First look for a server role
+if Chef::Config[:solo]
+  servers << node['collectd']['server_ip']
+else
+  search(:node, "role:'#{node[:collectd][:server_role]}'") do |n|
+      servers << n['fqdn']
+  end
+
+  # Then check for servers that have the collectd::server recipe
+  if servers.empty?
+    search(:node, 'recipes:"collectd::server"') do |n|
+      servers << n['fqdn']
+    end
+  end
 end
 
 if servers.empty?
