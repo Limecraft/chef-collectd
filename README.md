@@ -34,6 +34,8 @@ The client recipe will use the search index to automatically locate the server h
 
 ## Defines ##
 
+This recipe does not install any plugins, if you want you had to include this recipe from your own recipe and add them there.
+
 Several defines are provided to simplfy configuring plugins
 
 ### collectd_plugin ###
