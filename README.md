@@ -20,6 +20,7 @@ The [collectd_plugins](#) cookbook is not required, but provides many common plu
 * collectd.collectd_web.path - Location to install collectd_web to. Defaults to /srv/collectd_web.
 * collectd.collectd_web.hostname - Server name to use for collectd_web Apache site.
 * collectd.collectd_web.http_port - Port the virtualhost Apache listens on
+* collectd.enable_rrdtool_plugin - Should this recipe enable a default rrdtool plugin? Defaults to true
 
 # USAGE #
 

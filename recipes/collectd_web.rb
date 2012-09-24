@@ -51,3 +51,9 @@ template "/etc/apache2/sites-available/collectd_web.conf" do
 end
 
 apache_site "collectd_web.conf"
+
+if node[:collectd][:enable_rrdtool_plugin]
+  collectd_plugin "rrdtool" do
+    options :DataDir => node[:collectd][:base_dir], :CacheFlush => 120
+  end
+end
