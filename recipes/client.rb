@@ -32,6 +32,7 @@ else
   # Then check for servers that have the collectd::server recipe
   if servers.empty?
     search(:node, 'recipes:"collectd::server"') do |n|
+      servers << n['fqdn']
     end
   end
 end
