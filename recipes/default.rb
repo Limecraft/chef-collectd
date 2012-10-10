@@ -17,8 +17,18 @@
 # limitations under the License.
 #
 
-package "collectd" do
-  package_name "collectd-core"
+case node.platform
+when "debian","ubuntu"
+	package "collectd" do
+		package_name "collectd-core"
+	end
+when "centos", "redhat"
+	package "collectd"
+end
+
+if platform?("debian","ubuntu")
+	
+
 end
 
 service "collectd" do
