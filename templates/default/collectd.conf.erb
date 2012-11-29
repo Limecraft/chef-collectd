@@ -15,4 +15,4 @@ Interval <%= @node[:collectd][:interval] %>
 ReadThreads <%= @node[:collectd][:read_threads] %>
 
 Include "<%= @node[:collectd][:conf_dir] %>/*.conf"
-Include "<%= File.join(@node[:collectd][:configfile_dir],thresholds.conf) %>"
+Include "<%= @node[:collectd][:configfile_dir] %>/thresholds.conf"
