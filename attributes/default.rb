@@ -38,7 +38,7 @@ when "debian","ubuntu"
   # This is where the configfiles (collection.conf, collectd.conf, template.conf) reside
   default[:collectd][:configfile_dir] = "/etc/collectd"
   default[:collectd][:base_dir] = "/var/lib/collectd"
-  default[:collectd][:plugin_dir] = "/usr/lib/collectd/plugins"
+  default[:collectd][:plugin_dir] = "/usr/lib/collectd"
 when "centos", "redhat"
   default[:collectd][:conf_dir] = "/etc/collectd.d/plugins"
   default[:collectd][:configfile_dir] = "/etc"
