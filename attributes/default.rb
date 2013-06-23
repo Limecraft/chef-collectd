@@ -34,13 +34,13 @@ default[:collectd][:collectd_web][:http_port] = 80
 case node.platform
 when "debian","ubuntu"
   # This is where the plugins conf file is created
-  default[:collectd][:conf_dir] = "/etc/collectd/plugins"
+  default[:collectd][:conf_dir] = "/etc/collectd"
   # This is where the configfiles (collection.conf, collectd.conf, template.conf) reside
   default[:collectd][:configfile_dir] = "/etc/collectd"
   default[:collectd][:base_dir] = "/var/lib/collectd"
   default[:collectd][:plugin_dir] = "/usr/lib/collectd"
 when "centos", "redhat"
-  default[:collectd][:conf_dir] = "/etc/collectd.d/plugins"
+  default[:collectd][:conf_dir] = "/etc/collectd.d"
   default[:collectd][:configfile_dir] = "/etc"
   default[:collectd][:base_dir] = "/var/lib/collectd"
   default[:collectd][:plugin_dir] = "/usr/lib64/collectd"
